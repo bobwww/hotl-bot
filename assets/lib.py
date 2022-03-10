@@ -77,7 +77,6 @@ def DailyChanges():
     try:
         for line in text[0:(text.index('שכבת יב’ \n') - 1)]:
             text.remove(line)
-            
         return first_line + '\n'.join(text)
     except Exception as ex:
         print(ex)
