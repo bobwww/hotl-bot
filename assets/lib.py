@@ -65,7 +65,7 @@ def GetXEvents(number_of_rows=1):
             else:
                 days.append(dict(zip(headers, row)))
 
-'[]'    return days
+    return days
 
 
 def DailyChanges(): 
@@ -75,8 +75,7 @@ def DailyChanges():
     text = (open(path + r'\dailychanges.txt', "r", encoding="utf8")).readlines()
     first_line = text[0]
     try:
-        print(text)
-        for line in text[0:(text.index("שכבת יב’") - 1)]:
+        for line in text[0:(text.index('שכבת יב’ \n') - 1)]:
             text.remove(line)
             
         return first_line + '\n'.join(text)
