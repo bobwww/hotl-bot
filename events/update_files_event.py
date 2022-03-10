@@ -1,4 +1,4 @@
-from events.base_event      import BaseEvent
+from events.base_event import BaseEvent
 from assets import lib
 
 

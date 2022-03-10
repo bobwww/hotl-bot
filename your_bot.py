@@ -1,14 +1,12 @@
 import sys
 from keep_alive import keep_alive
 import settings
-import time;
 import discord
 import message_handler
-from assets import lib
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from events.base_event import BaseEvent
-from events import *
-from multiprocessing import Process
+from events import * # do not delete
+from commands import * # do not delete
 
 # Set to remember if the bot is already running, since on_ready may be called
 # more than once on reconnects
@@ -53,6 +51,7 @@ def main():
         sched.start()
         print(f"{n_ev} events loaded", flush=True)
 
+      
     # The message handler for both new message and edits
     async def common_handle_message(message):
         text = message.content

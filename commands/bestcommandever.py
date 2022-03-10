@@ -1,19 +1,5 @@
-def PostProcrastination():
-    # very cool
-    random_string = """```
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-[=========]```"""
-    return random_string
-
-from commands.base_command  import BaseCommand
-from utils                  import get_emoji
-from random                 import randint
-from assets                 import lib
+from commands.base_command import BaseCommand
+from assets import lib
 
 
 class Seppuku(BaseCommand):

@@ -1,8 +1,8 @@
-from commands.base_command  import BaseCommand
+from commands.base_command import BaseCommand
 
 # This, in addition to tweaking __all__ on commands/__init__.py, 
 # imports all classes inside the commands package.
-from commands               import *
+from commands import *
 
 import settings
 

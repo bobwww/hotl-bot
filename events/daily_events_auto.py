@@ -1,5 +1,4 @@
-from discord import client
-from events.base_event      import BaseEvent
+from events.base_event import BaseEvent
 from assets import lib
 from datetime import datetime
 

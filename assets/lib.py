@@ -1,10 +1,8 @@
-from datetime import date
 import random
 from datetime import datetime
 import pandas as pd
 import os
 import urllib.request as req
-import openpyxl
 
 # path setup
 
@@ -50,7 +48,7 @@ def GetXEvents(number_of_rows=1):
     datefound = False
     for row in l2:
         headers = row
-    today = date.today()
+    today = datetime.today()
     refdate = today.strftime("%d-%m-%Y")
     for row in l:
         checkdate = row[0].strftime("%d-%m-%Y")
@@ -67,7 +65,7 @@ def GetXEvents(number_of_rows=1):
             else:
                 days.append(dict(zip(headers, row)))
 
-    return days
+'[]'    return days
 
 
 def DailyChanges(): 
@@ -77,10 +75,13 @@ def DailyChanges():
     text = (open(path + r'\dailychanges.txt', "r", encoding="utf8")).readlines()
     first_line = text[0]
     try:
-        for line in text[0:(text.index('שכבת יב’\n') - 1)]:
+        print(text)
+        for line in text[0:(text.index("שכבת יב’") - 1)]:
             text.remove(line)
+            
         return first_line + '\n'.join(text)
-    except:
+    except Exception as ex:
+        print(ex)
         return "No Special Events Today"
 
 

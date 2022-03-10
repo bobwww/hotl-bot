@@ -1,6 +1,5 @@
 from commands.base_command import BaseCommand
 from assets import lib
-import datetime as dt
 
 
 class Events(BaseCommand):
@@ -39,7 +38,7 @@ class Events(BaseCommand):
                   if day['הערות'] != "No events":
                       msg += f"\tExtra: {day['הערות']}\n"
                   await message.channel.send("**"+msg+"**")
-        except Exception as ex:
+        except Exception:
             await message.channel.send("Please, provide a valid number of days")
             return
         
